@@ -15,11 +15,11 @@ low = 0 # floor
 high = 10000  # ceiling
 guess = 0
 # steps for the bisection search
-setps = 0
+steps = 0
 
 while 1:
   guess = (high + low) / 2
-  setps += 1
+  steps += 1
   _annual_salary = annual_salary
   current_savings = 0
 
@@ -27,23 +27,22 @@ while 1:
     if i % 6 == 0 and i != 0:
       _annual_salary += _annual_salary * semi_annual_raise
     current_savings += (current_savings*r/12) + (((_annual_salary/12)*guess)/10000)
-  
+
   # guess found
   if current_savings - (total_cost * portion_down_payment) >= -100 and \
   current_savings - (total_cost * portion_down_payment) <= 100:
-    print("Best savings rate: %.4f" % abs(guess/10000))
-    print("Steps in bisection search:", setps)
+    print("Best savings rate: %.4f" % (guess/10000))
+    print("Steps in bisection search:", steps)
     break
-  
+
   #changing search values
   if current_savings - (total_cost * portion_down_payment) > 100:
     high = guess
   else:
     low = guess
-  
+
   # impossible solution
   if low == high:
     print("It is not possible to pay the down payment in three years.")
     break
-
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env/python3
 
 # annual salary
 annual_salary = int(input("Enter your annual salary: "))
