@@ -1,0 +1,5 @@
+# ignore vscode settings
+6.0001/**/.vscode/
+
+# non important files
+*.txt
